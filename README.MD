@@ -12,4 +12,4 @@ Adicionar e remover transações, realizando o cálculo e armazenando no `localS
 
 ## Preview
 
-[caminho para a imagem!](src/assets/preview.png)
+![caminho para a imagem!](src/assets/preview.png)
