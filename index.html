@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="build/css/styles.min.css">
+  <title>Finances</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Finances</h1>
+  </header>
+
+  <main class="root">
+    <section class="balance">
+      <h2 class="screen-reader-only">Balanço</h2>
+      <div class="card">
+        <h3>
+          <span>Entradas</span>
+          <img src="src/assets/income.svg" alt="Imagem de Entradas">
+        </h3>
+        <p data-income>R$ 5.000,95</p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span>Saidas</span>
+          <img src="src/assets/expense.svg" alt="Imagem de Saidas">
+        </h3>
+        <p data-expense>R$2.500,00</p>
+      </div>
+
+      <div class="card total">
+        <h3>
+          <span>Total</span>
+          <img src="src/assets/total.svg" alt="Imagem de Total">
+        </h3>
+        <p data-total>R$2.500,05</p>
+      </div>
+    </section>
+
+    <section class="transaction">
+      <h2 class="screen-reader-only">Transações</h2>
+      <a href="#" class="button new" onclick="toggle()">+ Nova transação</a>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <div class="modal-overlay">
+    <div class="modal">
+
+      <div class="form">
+        <h2>Nova transação</h2>
+        <form onSubmit="Form.submit(event)">
+          <div class="input-group">
+            <label for="description" class="screen-reader-only">Descrição</label>
+            <input type="text" id="description" name="description" placeholder="Descrição">
+          </div>
+
+          <div class="input-group">
+            <label for="amount" class="screen-reader-only">Valor</label>
+            <input type="number" id="amount" name="amount" step="0.01" placeholder="0,00">
+            <small class="help">
+              Use o sinal negativo "-" para despesas, e vírgula "," para casas decimais.
+            </small>
+          </div>
+
+          <div class="input-group">
+            <label for="date" class="screen-reader-only">Data</label>
+            <input type="date" id="date" name="date">
+          </div>
+
+          <div class="input-group actions">
+            <a href="#" class="cancel" onclick="toggle()">Cancelar</a>
+            <button>Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Todos os direitos reservados</p>
+  </footer>
+</body>
+<script src="build/js/bundle.min.js"></script>
+
+</html>
